@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ELIMINAR MARCA</title>
+</head>
+<body>
+<h2>¿Estás seguro de eliminar este registro?</h2>
+<div th:object="${marca}">
+    <p><strong>ID:</strong> <span th:text="*{id}"></span></p>
+    <p><strong>Nombre:</strong> <span th:text="*{nombre}"></span></p>
+    <p><strong>País:</strong> <span th:text="*{pais}"></span></p>
+</div>
+
+<form th:action="@{/entidades/confirmar-eliminar/{id}(id=${marca.id})}" method="post">
+    <button type="submit">Eliminar definitivamente</button>
+    <a th:href="@{/entidades}">Cancelar</a>
+</form>
+</body>
+</html>

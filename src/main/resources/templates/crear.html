@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>NUEVA MARCA</title>
+</head>
+<body>
+<h2>Agregar Registro</h2>
+<form th:action="@{/entidades/guardar}" th:object="${marca}" method="post">
+  <label>ID:</label>
+  <input type="number" th:field="*{id}" required><br>
+
+  <label>Nombre:</label>
+  <input type="text" th:field="*{nombre}" required><br>
+
+  <label>País:</label>
+  <input type="text" th:field="*{pais}" required><br>
+
+  <label>Año de Fundación:</label>
+  <input type="number" th:field="*{fundacion}" required><br>
+
+  <button type="submit">Guardar</button>
+  <a th:href="@{/entidades}">Cancelar</a>
+</form>
+</body>
+</html>
